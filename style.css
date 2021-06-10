@@ -1,8 +1,9 @@
 #grid-container {
     border: 5px solid black;
-    height: 90vh;
+    height: 85vh;
     width: 130vh;
     margin: auto;
+    padding: 0;
 
     display: grid;
     grid-template-columns: repeat(16, 1fr);
@@ -12,3 +13,21 @@
 .grid-tile:hover {
     background-color: red;
 }
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    margin: 2em;
+    padding: 0;
+}
+
+#buttons button {
+    margin: 0 1em 0 1em;
+    padding: 0;
+    /* width: 18em;
+    height: 7em; */
+    font-size: 3.5em;
+    padding: .3em;
+    border-radius: .2em;
+}
+
