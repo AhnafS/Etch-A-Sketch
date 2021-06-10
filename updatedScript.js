@@ -1,9 +1,11 @@
 const gridContainer = document.querySelector('#grid-container');
 const eraserButton = document.querySelector('#eraser');
 const blackButton = document.querySelector("#blackColor");
-const grayButton = document.querySelector("#grayScale");
 const clearButton = document.querySelector('#clear');
 const rainbowButton = document.querySelector('#rainbow');
+const slider = document.querySelector('#myRange');
+const sliderDisplay = document.querySelector('#sliderDisplay');
+const sliderRefresh = document.querySelector("#sliderRefresh");
 let currentMode = 'color';
 let mainColor = 'black';
 
@@ -11,11 +13,20 @@ createDiv(gridContainer, 16);
 let tiles = document.querySelectorAll('.grid-tile');
 
 function createDiv (container, n) {
+    reset(container);
+    container.style.gridTemplateColumns = `repeat(${n}, 1fr)`
+    container.style.gridTemplateRows = `repeat(${n}, 1fr)`
     for (let i = 0; i < n * n; i++){
         let div = document.createElement('div');
         div.classList.add('grid-tile');
         container.appendChild(div);
     }
+}
+
+function reset (grid) {
+    while (grid.firstChild) {
+        grid.removeChild(grid.lastChild);
+  }
 }
 
 
@@ -68,8 +79,13 @@ function rainbow(){
     })
 }
 
+slider.oninput = function() {
+  sliderDisplay.textContent = slider.value;
+}
 
-//testing with functions
+
+
+//Active Events 
 changeModes();
 
 blackButton.addEventListener('click', e => {backgroundColorChange('black')});
@@ -82,3 +98,11 @@ eraserButton.addEventListener('click', e => {
 clearButton.addEventListener('click', clearGrid);
 
 rainbowButton.addEventListener('click', rainbow);
+
+
+sliderRefresh.addEventListener('click', e => {
+    createDiv(gridContainer, slider.value);
+});
+
+
+

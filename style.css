@@ -1,13 +1,17 @@
+body {
+    background-color: bisque;
+}
+
 #grid-container {
     border: 5px solid black;
-    height: 85vh;
+    height: 80vh;
     width: 130vh;
     margin: auto;
     padding: 0;
+    background-color: white;
 
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+
 }
 
 .grid-tile:hover {
@@ -29,5 +33,21 @@
     font-size: 3.5em;
     padding: .3em;
     border-radius: .2em;
+    
 }
 
+#gridSize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+#gridSize button {
+    height: 2em;
+}
+
+#gridSize * {
+    margin: 0 1em 0 1em;
+    font-size: 1.5em;
+}

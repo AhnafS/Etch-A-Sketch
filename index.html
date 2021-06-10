@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Etch-A-Sketch</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="buttons">
-        <button id="eraser" class="data-buttons">Eraser</button>
-        <button id="clear" class="data-buttons">Clear</button>
-        <button id="blackColor" value="black" class="data-buttons">Black</button>
-        <button id="grayScale" value='gray' class="data-buttons">Gray Scale</button>  
-        <button id="rainbow" value='rainbow' class="data-buttons">Rainbow</button>  
+      <button id="eraser" class="data-buttons">Eraser</button>
+      <button id="clear" class="data-buttons">Clear</button>
+      <button id="blackColor" value="black" class="data-buttons">Black</button>
+      <button id="rainbow" value="rainbow" class="data-buttons">Rainbow</button>
     </div>
 
-    <div id="grid-container">
+    <div id="gridSize">
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        id="myRange"
+      />
 
+      <h3 id="sliderDisplay"></h3>
+      <button id="sliderRefresh">Refresh</button>
     </div>
 
+    <div id="grid-container"></div>
 
     <script src="updatedScript.js"></script>
-</body>
+  </body>
 </html>
